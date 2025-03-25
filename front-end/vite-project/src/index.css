@@ -8,8 +8,8 @@
     font-family: 'Poppins', sans-serif;
   }
   body{
-    background: rgb(228,84,147);
-    background: radial-gradient(circle, rgba(228,84,147,1) 0%, rgba(108,137,171,1) 100%);
+    background: rgb(67, 65, 203);
+    background: radial-gradient(circle, rgb(46, 41, 193) 0%, rgb(12, 34, 59) 100%);
   }
 
   /* Header */
@@ -193,4 +193,89 @@ th {
 .delete-cell{
   background: none;
   border: none;
+}
+
+/* Championship List */
+
+.championship-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin-top: 120px;
+  color: #fff;
+}
+.championship-list h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.championship-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: #dedede;
+  border-radius: 40px;
+  padding: 20px;
+  color: #000;
+
+}
+
+/* Single Championship */
+.single-championship {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+  margin-bottom: 30px;
+}
+.single-championship:hover {
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+.single-championship__logo{
+  width: 95px;
+  height: 80px;
+  margin: 5px 0px;
+}
+.championship-name{
+  font-size: 20px;
+  color: #000;
+}
+/* Color Variations for Championships */
+.champions-league {
+  background-color: #2d5dd7;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.copa-brasil {
+  background-color: #34a853;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.single-championship button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+  margin-left: 10px;
+}
+
+.single-championship button:hover {
+  color: #111;
 }

@@ -1,10 +1,10 @@
 import React from 'react';
+import ChampionshipList from '../components/ChampionshipList';
 
 const Sobre = () => {
     return (
         <div>
-            <h1>Sobre</h1>
-            <p>Esta é a página Sobre.</p>
+            <ChampionshipList />
         </div>
     );
 };
