@@ -250,7 +250,8 @@ th {
 }
 .championship-name{
   font-size: 20px;
-  color: #000;
+  font-weight: bold;
+  color: #ffffff;
 }
 /* Color Variations for Championships */
 .champions-league {
