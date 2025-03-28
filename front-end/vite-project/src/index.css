@@ -237,6 +237,7 @@ th {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease-in-out;
   margin-bottom: 30px;
+  text-decoration: none;
 }
 .single-championship:hover {
   transform: scale(1.03);
