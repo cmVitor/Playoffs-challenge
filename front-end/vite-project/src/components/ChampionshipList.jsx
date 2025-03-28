@@ -1,15 +1,17 @@
 import React from 'react'
 import SingleChampionship from './SingleChampionship'
-import championsleage from '../assets/images/championsleague.png'
-import copadobrasil from '../assets/images/copadobrasil.png'
+import { useState, useEffect } from 'react'
 
 const ChampionshipList = () => {
 
-    const championships = [
-        { id: 1, name: 'Champions League', logo: championsleage, colorClass: 'champions-league' },
-        { id: 2, name: 'Copa do Brasil', logo: copadobrasil, colorClass: 'copa-brasil' }
+    const [championships, setChampionships] = useState([]);
 
-    ];
+    useEffect(() => {
+        fetch('http://localhost:5000/campeonatos') // Altere a URL conforme seu backend
+            .then(response => response.json())
+            .then(data => setChampionships(data))
+            .catch(error => console.error('Erro ao buscar campeonatos:', error));
+    }, []);
 
 
     return (

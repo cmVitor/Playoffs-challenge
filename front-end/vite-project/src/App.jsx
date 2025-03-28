@@ -2,8 +2,9 @@ import React from 'react'
 import Header from './components/Header'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from './pages/Login';
-import Sobre from './pages/Sobre';
+import Campeonatos from './pages/Campeonatos';
 import Home from './pages/Home';
+import ChampionshipPage from './pages/ChampionshipPage.jsx';
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
       <Routes>
         <Route path='/' element= { <Home/> }> </Route>
         <Route path='/login' element= {<Login />}> </Route>
-        <Route path='/sobre' element= {<Sobre />}> </Route>
+        <Route path='/campeonatos' element= {<Campeonatos />}> </Route>
+        <Route path='/campeonatos/:name' element= {<ChampionshipPage />}> </Route>
       </Routes>
 
     </BrowserRouter>

@@ -253,6 +253,33 @@ th {
   font-weight: bold;
   color: #ffffff;
 }
+.championship-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 15%;
+}
+.single-championship button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.star-button{
+  height: 30px;
+  color: rgb(77, 77, 77);
+}
+.star-button:hover{
+  color: #000000;
+}
+.share-button{
+  height: 30px;
+  color: rgb(77, 77, 77);
+}
+.share-button:hover{
+  color: #000000;
+}
 /* Color Variations for Championships */
 .champions-league {
   background-color: #2d5dd7;
@@ -266,17 +293,4 @@ th {
   color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
-}
-
-.single-championship button {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #555;
-  margin-left: 10px;
-}
-
-.single-championship button:hover {
-  color: #111;
 }
