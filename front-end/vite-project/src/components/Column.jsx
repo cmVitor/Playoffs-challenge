@@ -9,6 +9,7 @@ const Column = ({ phase, matches }) => {
             {matches.map((match, index) => (
                 <MatchCard key={index} team1={match.team1} team2={match.team2} />
             ))}
+            <p>selecione o vencedor</p>
         </div>
     );
 };

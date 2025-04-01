@@ -1,35 +1,33 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Bracket from "../components/Bracket";
 
 const ChampionshipPage = () => {
     const { name } = useParams();
+    const [championshipData, setChampionshipData] = useState(null);
+    const [loading, setLoading] = useState(true);
 
-    const championshipData = {
-        name: name,
-        rounds: [
-            {
-                phase: "Round of 16",
-                matches: [
-                    { team1: "Arsenal", team2: "PSV" },
-                    { team1: "Real Madrid", team2: "Atlético de Madrid" },
-                    { team1: "PSG", team2: "Liverpool" },
-                    { team1: "Club Brugge", team2: "Aston Villa" },
-                ]
-            },
-            {
-                phase: "Quarter Finals",
-                matches: [ {}, {}, {}, {} ] 
-            },
-            {
-                phase: "Semi Finals",
-                matches: [ {}, {} ] 
-            },
-            {
-                phase: "Final",
-                matches: [ {} ] 
+    useEffect(() => {
+        const fetchChampionship = async () => {
+            try {
+                const response = await fetch(`http://localhost:5000/campeonatos/${name}`);
+                if (!response.ok) {
+                    throw new Error("Campeonato não encontrado");
+                }
+                const data = await response.json();
+                setChampionshipData(data);
+            } catch (error) {
+                console.error(error);
+            } finally {
+                setLoading(false);
             }
-        ]
-    };
+        };
+
+        fetchChampionship();
+    }, [name]);
+
+    if (loading) return <p>Carregando...</p>;
+    if (!championshipData) return <p>Campeonato não encontrado</p>;
 
     return (
         <div className="championship-page">

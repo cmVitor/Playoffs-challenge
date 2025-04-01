@@ -6,8 +6,12 @@ const Bracket = ({ rounds }) => {
         <div className="bracket">
 
             {rounds.map((round, index) => (
-                <Column key={index} phase={round.phase} matches={round.matches} />
+                <Column key={`left-${index}`} phase={round.phase} matches={round.matches} />
             ))}
+            {rounds.slice().reverse().slice(1).map((round, index) => (
+                <Column key={`right-${index}`} phase={round.phase} matches={round.matches} />
+            ))}
+            
         </div>
     );
 };
